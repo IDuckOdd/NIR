@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoCode Система Постобработки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Конструктор Пайплайнов</h1>
+    </header> 
+
+    <div class="app-container">
+        <aside class="palette">
+            <h2>Блоки</h2>
+            <div class="palette-group">
+                <h3>Источники (Triggers)</h3>
+                <div class="block-template draggable" draggable="true" data-type="trigger" data-name="HTTP Webhook">
+                    <span class="icon">➡️</span> HTTP Webhook
+                </div>
+                <div class="block-template draggable" draggable="true" data-type="trigger" data-name="Email Input">
+                    <span class="icon">📧</span> Email Input
+                </div>
+            </div>
+
+            <div class="palette-group">
+                <h3>Обработка (Processing)</h3>
+                <div class="block-template draggable" draggable="true" data-type="processing" data-name="Фильтр">
+                    <span class="icon">🔍</span> Фильтр
+                </div>
+                <div class="block-template draggable" draggable="true" data-type="processing" data-name="Трансформация">
+                    <span class="icon">🔄</span> Трансформация
+                </div>
+                <div class="block-template draggable" draggable="true" data-type="processing" data-name="Обогащение (API)">
+                    <span class="icon">🔗</span> Обогащение (API)
+                </div>
+            </div>
+
+            <div class="palette-group">
+                <h3>Действия (Actions)</h3>
+                <div class="block-template draggable" draggable="true" data-type="action" data-name="Отправить в WhatsApp">
+                    <span class="icon">💬</span> WhatsApp
+                </div>
+                <div class="block-template draggable" draggable="true" data-type="action" data-name="Создать задачу Jira">
+                    <span class="icon">📝</span> Jira
+                </div>
+                <div class="block-template draggable" draggable="true" data-type="action" data-name="Email Уведомление">
+                    <span class="icon">✉️</span> Email
+                </div>
+            </div>
+        </aside>
+
+        <main class="workspace" id="workspace">
+            <svg id="connections-svg" class="connections-svg"></svg>
+            <div class="workspace-placeholder">Перетащите блоки сюда для создания пайплайна</div>
+        </main>
+
+        <aside class="properties-panel">
+            <h2>Свойства Блока</h2>
+            <div id="properties-content">
+                <p>Выберите блок для настройки.</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <button id="savePipeline">Сохранить Пайплайн</button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
