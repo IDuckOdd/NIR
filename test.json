@@ -1,0 +1,46 @@
+{
+  "blocks": [
+    {
+      "id": "block-0",
+      "name": "HTTP Webhook",
+      "type": "trigger",
+      "x": 52.975006103515625,
+      "y": 294.125,
+      "config": {}
+    },
+    {
+      "id": "block-3",
+      "name": "Фильтр",
+      "type": "processing",
+      "x": 303.1874694824219,
+      "y": 295.125,
+      "config": {
+        "filterField": "filterData",
+        "filterValue": "critical"
+      }
+    },
+    {
+      "id": "block-4",
+      "name": "Отправить в WhatsApp",
+      "type": "action",
+      "x": 507.1999816894531,
+      "y": 294.125,
+      "config": {
+        "whatsAppChat": "Рабочий чат",
+        "whatsAppMessage": "Нагрузка на сервер > 90%"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn-2",
+      "fromBlockId": "block-0",
+      "toBlockId": "block-3"
+    },
+    {
+      "id": "conn-3",
+      "fromBlockId": "block-3",
+      "toBlockId": "block-4"
+    }
+  ]
+}
